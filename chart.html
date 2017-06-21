@@ -2,9 +2,15 @@
 <html>
 	
 <head>
+<style>
+	.canvasjs-chart-credit{
+		color: #fff !important;
+		background: #fff !important;
+	}
+</style>
 </head>
 <body>
-	<div id="chartContainer" style="height: 300px; width: 100; background:red">
+	<div id="chartContainer" style="height: 300px; width: 600px; background:red">
 	</div>
 
 	<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
@@ -26,11 +32,12 @@
 	var chart = new CanvasJS.Chart("chartContainer",
 	{   
 		axisY: {
-				viewportMinimum: 0,
-			    viewportMaximum: 100
+			viewportMinimum: 0,
+			viewportMaximum: 100,
+			title: "Percentage"
 				},
 		axisX: {
-					
+			
 				},
 		data: [
 		{
