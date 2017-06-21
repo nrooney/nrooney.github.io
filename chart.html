@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"/>
+	<script type="text/javascript">
+	//initial value of dataPoints 
+	var price = 0;
+	var price_pen_correl = 0.7147998074;
+	var price_profit_correl = 0.5617574111;
+	var pen = price * price_pen_correl;
+	var profit = price * price_profit_correl;
+
+	var dps = [
+			{ label: "Price Decrease", y: price },
+			{ label: "Penetration Increase", y: pen},
+			{ label: "AUPU Increase", y: profit },
+			];	
+
+	//make chart
+	var chart = new CanvasJS.Chart("chartContainer",
+	{   
+		axisY: {
+					viewportMinimum: 0,
+			    viewportMaximum: 100
+				},
+		axisX: {
+					
+				},
+		data: [
+		{
+			type: "column",
+			dataPoints: dps
+		}
+		]
+	});
+
+	chart.render();
+
+	//timer
+	setInterval(chartUpdate, 1000);
+	var priceincrease = price;
+
+	function chartUpdate() {
+			priceincrease = priceincrease + 5;
+	    
+	    if(priceincrease == 105) {
+	    	priceincrease = 0;
+	    }
+	    
+			pen = priceincrease * price_pen_correl;
+			profit = priceincrease * price_profit_correl;
+		    dps[0] = { label: "Price Decrease", y: priceincrease};
+		    dps[1] = { label: "Penetration Increase", y: pen};
+		    dps[2] = { label: "AUPU Increase", y: profit};
+		    chart.render();
+			updateChart();	
+	}
+
+	</script>
+	<script type="text/javascript" src="/assets/script/canvasjs.min.js"></script>
+</head>
+<body>
+	<div id="chartContainer" style="height: 300px; width: 100;">
+	</div>
+</body>
+</html>
