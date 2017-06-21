@@ -10,7 +10,7 @@
 </style>
 </head>
 <body>
-	<div id="chartContainer" style="height: 300px; width: 600px; background:red">
+	<div id="chartContainer" style="height: 300px; width: 600px">
 	</div>
 
 	<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
@@ -54,9 +54,9 @@
 	var priceincrease = price;
 
 	function chartUpdate() {
-			priceincrease = priceincrease + 5;
+			priceincrease = priceincrease + 10;
 	    
-	    if(priceincrease == 105) {
+	    if(priceincrease > 100) {
 	    	priceincrease = 0;
 	    }
 	    
