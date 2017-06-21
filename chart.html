@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 <html>
-
+	
 <head>
+	<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 	<script type="text/javascript">
 	//initial value of dataPoints 
 	var price = 0;
@@ -20,7 +21,7 @@
 	var chart = new CanvasJS.Chart("chartContainer",
 	{   
 		axisY: {
-					viewportMinimum: 0,
+				viewportMinimum: 0,
 			    viewportMaximum: 100
 				},
 		axisX: {
@@ -57,10 +58,9 @@
 	}
 
 	</script>
-	<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
 <body>
-	<div id="chartContainer" style="height: 300px; width: 100;">
+	<div id="chartContainer" style="height: 300px; width: 100; background:red">
 	</div>
 </body>
 </html>
